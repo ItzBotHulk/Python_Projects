@@ -1,8 +1,20 @@
-import os
+from gtts import gTTS 
+  
+import os 
 
-if __name__ == '__main__':
-    print("Welcome to ROBO_Speaker. ");
-    x = input("Enter sentence to speak : ")
-    command = f"mshta (""SAPI.SpVoice"").Speak {x})"
+print("This is a ROBO Speaker .");
+
+while True:
+    x = input("Write what you want to speak : ")
+    if x == "s":
+        break;
+    mytext = f"{x}"
     
-    os.system(command)
+    language = 'en'
+    
+    myobj = gTTS(text=mytext, lang=language, slow=False) 
+    
+    myobj.save("output.mp3") 
+    
+    os.system("start output.mp3") 
+    
