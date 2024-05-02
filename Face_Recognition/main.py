@@ -54,7 +54,7 @@ while True:
 
             if name in student:
                 student.remove(name)
-                current_time = now.strftime("%H-%M%S")
+                current_time = now.strftime("%H-%M-%S")
                 lnWriter.writerow([name, current_time])
         
         cv2.imshow("Attendace",frame)
